@@ -117,7 +117,7 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                       const SizedBox(height: 20),
 
-                      const Text("PASSWORD"),
+                       Text("PASSWORD"),
                       const SizedBox(height: 5),
                       TextField(
                         controller: passwordController,
