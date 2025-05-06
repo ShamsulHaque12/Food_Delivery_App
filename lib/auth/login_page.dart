@@ -20,6 +20,11 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+
+    // Get screen width and height
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: const Color(0xFF0D0D25),
       body: SafeArea(
@@ -59,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
 
             Expanded(
               child: Container(
-                width: double.infinity,
+                width: screenWidth * 0.98,
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.vertical(top: Radius.circular(35)),

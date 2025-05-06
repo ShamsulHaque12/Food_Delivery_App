@@ -18,6 +18,10 @@ class _SignupPageState extends State<SignupPage> {
 
   @override
   Widget build(BuildContext context) {
+
+    // Get screen width and height
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: const Color(0xFF0D0D25),
       body: SafeArea(
@@ -73,7 +77,7 @@ class _SignupPageState extends State<SignupPage> {
 
             Expanded(
               child: Container(
-                width: double.infinity,
+                width: screenWidth * 0.99,
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.vertical(top: Radius.circular(35)),
