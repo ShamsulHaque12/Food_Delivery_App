@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/auth/signup_page.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-
 import 'login_page.dart';
 
 class Firstslider extends StatefulWidget {
@@ -13,36 +11,33 @@ class Firstslider extends StatefulWidget {
 }
 
 class _FirstsliderState extends State<Firstslider> {
-  final PageController _controller = PageController(initialPage: 1);
-  int currentIndex = 1;
+  final PageController _controller = PageController(initialPage: 0);
+  int currentIndex = 0;
 
   void nextPage() {
-    if (currentIndex < 3) {
+    if (currentIndex < 2) {
       _controller.nextPage(
         duration: const Duration(milliseconds: 300),
         curve: Curves.ease,
       );
     } else {
-      Get.to(()=>LoginPage());
+      Get.to(() => LoginPage());
     }
   }
 
   final List<String> titles = [
-    "",
     "All your favorites",
     "Order from chosen chef",
     "Free delivery offers",
   ];
 
   final List<String> subtitles = [
-    "",
-    "Get all your loved foods in one once place,\nyou just place the order we do the rest",
-    "Get all your loved foods in one once place,\nyou just place the order we do the rest",
-    "Get all your loved foods in one once place,\nyou just place the order we do the rest",
+    "Get all your loved foods in one place,\nyou just place the order we do the rest",
+    "Get all your loved foods in one place,\nyou just place the order we do the rest",
+    "Get all your loved foods in one place,\nyou just place the order we do the rest",
   ];
 
   final List<String> images = [
-    "",
     "assets/images/first.jpg",
     "assets/images/second.jpg",
     "assets/images/third.jpg",
@@ -58,16 +53,13 @@ class _FirstsliderState extends State<Firstslider> {
             Expanded(
               child: PageView.builder(
                 controller: _controller,
-                itemCount: 4,
+                itemCount: 3,
                 onPageChanged: (index) {
                   setState(() {
                     currentIndex = index;
                   });
                 },
                 itemBuilder: (context, index) {
-                  if (index == 0) {
-                    return const Center();
-                  }
                   return Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -93,7 +85,7 @@ class _FirstsliderState extends State<Firstslider> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
-                4,
+                3,
                     (index) => Container(
                   margin: const EdgeInsets.symmetric(horizontal: 4),
                   width: 10,
@@ -116,13 +108,13 @@ class _FirstsliderState extends State<Firstslider> {
                 ),
               ),
               child: Text(
-                currentIndex == 3 ? "GET STARTED" : "NEXT",
+                currentIndex == 2 ? "GET STARTED" : "NEXT",
                 style: const TextStyle(color: Colors.white),
               ),
             ),
             TextButton(
               onPressed: () {
-                Get.to(()=>LoginPage());
+                Get.to(() => LoginPage());
               },
               child: const Text("Skip", style: TextStyle(color: Colors.grey)),
             ),

@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../home_pages/locetion_screen.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -179,7 +183,7 @@ class _SignupPageState extends State<SignupPage> {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
-                            // Sign-up logic here
+                            Get.to(()=>LocetionScreen());
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.orange,

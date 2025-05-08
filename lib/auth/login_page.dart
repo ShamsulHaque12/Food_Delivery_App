@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/auth/signup_page.dart';
 import 'package:get/get.dart';
 
+import '../home_pages/home_page.dart';
 import 'forgot_password.dart';
 
 class LoginPage extends StatefulWidget {
@@ -21,9 +22,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
 
-    // Get screen width and height
     final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       backgroundColor: const Color(0xFF0D0D25),
@@ -156,7 +155,7 @@ class _LoginPageState extends State<LoginPage> {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
-                            // Log in logic here
+                            Get.to(()=>HomePage());
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.orange,
@@ -230,7 +229,7 @@ class _LoginPageState extends State<LoginPage> {
                         ],
                       ),
 
-                      const SizedBox(height: 20),
+                      //const SizedBox(height: 20),
                     ],
                   ),
                 ),
