@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_delivery/home_pages/pop_up_page.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
@@ -21,7 +22,7 @@ class LocetionScreen extends StatelessWidget {
           SizedBox(height: 30),
           InkWell(
             onTap: (){
-              Get.to(()=>HomePage());
+              Get.to(()=>PopUpPage());
             },
             child: Container(
               height: 65,

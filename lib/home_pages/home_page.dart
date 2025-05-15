@@ -206,10 +206,10 @@ class _HomePageState extends State<HomePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Image.asset(item['image'], height: 80, fit: BoxFit.cover),
-                           SizedBox(height: 10),
+                          SizedBox(height: 10),
                           Text(item['name'], style:  TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
                           Text(item['restaurant'], style:  TextStyle(fontSize: 15, color: Colors.grey)),
-                           SizedBox(height: 5),
+                          SizedBox(height: 5),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -318,13 +318,13 @@ class _HomePageState extends State<HomePage> {
           MaterialPageRoute(
             builder:
                 (_) => RestrurentDetailPage(
-                  name: name,
-                  imagePath: imagePath,
-                  cuisine: cuisine,
-                  rating: rating,
-                  price: delivery,
-                  time: time,
-                ),
+              name: name,
+              imagePath: imagePath,
+              cuisine: cuisine,
+              rating: rating,
+              price: delivery,
+              time: time,
+            ),
           ),
         );
       },
