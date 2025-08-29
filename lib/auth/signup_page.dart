@@ -194,6 +194,7 @@ class _SignupPageState extends State<SignupPage> {
       hintText: hintText,
       filled: true,
       fillColor: Colors.grey[100],
+      hintStyle: const TextStyle(color: Colors.grey),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
         borderSide: BorderSide.none,

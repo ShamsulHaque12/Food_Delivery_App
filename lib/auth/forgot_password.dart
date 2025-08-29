@@ -95,6 +95,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                 keyboardType: TextInputType.emailAddress,
                                 decoration: InputDecoration(
                                   hintText: "sujon@gmail.com",
+                                  hintStyle: const TextStyle(color: Colors.grey),
                                   filled: true,
                                   fillColor: Colors.grey[100],
                                   border: OutlineInputBorder(

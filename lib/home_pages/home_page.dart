@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/home_pages/restrurent_detail_page.dart';
+import 'package:food_delivery/home_pages/shopping_bag/view/shopping_bag_screen.dart';
 import 'package:food_delivery/model/food_categori.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 import '../widgets/resturens.dart';
+import 'all_categories/view/see_all_categories.dart';
 import 'all_resturents.dart';
 import 'food_details_page.dart';
 
@@ -40,8 +42,8 @@ class _HomePageState extends State<HomePage> {
                   Row(
                     children: [
                       Container(
-                        height: 70,
-                        width: 70,
+                        height: 60,
+                        width: 60,
                         decoration: BoxDecoration(
                           color: Colors.grey[300],
                           shape: BoxShape.circle,
@@ -83,16 +85,27 @@ class _HomePageState extends State<HomePage> {
                   Stack(
                     alignment: Alignment.topRight,
                     children: [
-                      Container(
-                        height: 60,
-                        width: 60,
-                        decoration: const BoxDecoration(
-                          color: Colors.black,
-                          shape: BoxShape.circle,
-                        ),
-                        child: const Icon(
-                          Icons.shopping_bag,
-                          color: Colors.white,
+                      GestureDetector(
+                        onTap: (){
+                          Get.to(() => ShoppingBagScreen(
+                            name: '',
+                            imagePath: '',
+                            price: '',
+                            restaurant: '',
+                            icon: Icons.add,
+                          ));
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 50,
+                          decoration: const BoxDecoration(
+                            color: Colors.black,
+                            shape: BoxShape.circle,
+                          ),
+                          child: const Icon(
+                            Icons.shopping_bag,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       const Positioned(
@@ -159,19 +172,24 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.grey,
                   ),
                 ),
-                Row(
-                  children: [
-                    Text(
-                      "See All",
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey,
+                GestureDetector(
+                  onTap: () {
+                    Get.to(() => SeeAllCategories());
+                  },
+                  child: Row(
+                    children: [
+                      Text(
+                        "See All",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey,
+                        ),
                       ),
-                    ),
-                    SizedBox(width: 5),
-                    Icon(Icons.arrow_forward_ios_outlined),
-                  ],
+                      SizedBox(width: 5),
+                      Icon(Icons.arrow_forward_ios_outlined),
+                    ],
+                  ),
                 ),
               ],
             ),
