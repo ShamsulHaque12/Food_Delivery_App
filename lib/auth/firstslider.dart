@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/auth/signup_page.dart';
 import 'package:get/get.dart';
 import 'login_page.dart';
 
@@ -67,13 +66,19 @@ class _FirstsliderState extends State<Firstslider> {
                       const SizedBox(height: 24),
                       Text(
                         titles[index],
-                        style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                        style: const TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                        ),
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 12),
                       Text(
                         subtitles[index],
-                        style: const TextStyle(fontSize: 18, color: Colors.grey),
+                        style: const TextStyle(
+                          fontSize: 18,
+                          color: Colors.grey,
+                        ),
                         textAlign: TextAlign.center,
                       ),
                     ],
@@ -86,12 +91,15 @@ class _FirstsliderState extends State<Firstslider> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
                 3,
-                    (index) => Container(
+                (index) => Container(
                   margin: const EdgeInsets.symmetric(horizontal: 4),
                   width: 10,
                   height: 10,
                   decoration: BoxDecoration(
-                    color: currentIndex == index ? Colors.orange : Colors.grey.shade300,
+                    color:
+                        currentIndex == index
+                            ? Colors.orange
+                            : Colors.grey.shade300,
                     shape: BoxShape.circle,
                   ),
                 ),
@@ -102,7 +110,10 @@ class _FirstsliderState extends State<Firstslider> {
               onPressed: nextPage,
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.orange,
-                padding: const EdgeInsets.symmetric(horizontal: 150, vertical: 16),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 150,
+                  vertical: 16,
+                ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),

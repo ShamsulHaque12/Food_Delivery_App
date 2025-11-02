@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/auth/signup_page.dart';
 import 'package:get/get.dart';
 
-import '../home_pages/home_page.dart';
 import '../home_pages/pop_up_page.dart';
 import 'forgot_password.dart';
 
@@ -38,7 +37,9 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     children: [
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: screenWidth * 0.05,
+                        ),
                         height: screenHeight * 0.30,
                         alignment: Alignment.bottomLeft,
                         child: Column(
@@ -60,7 +61,10 @@ class _LoginPageState extends State<LoginPage> {
                             Center(
                               child: Text(
                                 "Please log in to your existing account",
-                                style: TextStyle(color: Colors.white70, fontSize: 18),
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 18,
+                                ),
                               ),
                             ),
                             SizedBox(height: 20),
@@ -73,7 +77,9 @@ class _LoginPageState extends State<LoginPage> {
                           width: double.infinity,
                           decoration: const BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.vertical(top: Radius.circular(35)),
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(35),
+                            ),
                           ),
                           padding: EdgeInsets.symmetric(
                             horizontal: screenWidth * 0.06,
@@ -89,7 +95,9 @@ class _LoginPageState extends State<LoginPage> {
                                 keyboardType: TextInputType.emailAddress,
                                 decoration: InputDecoration(
                                   hintText: "sujon@gmail.com",
-                                  hintStyle: const TextStyle(color: Colors.grey),
+                                  hintStyle: const TextStyle(
+                                    color: Colors.grey,
+                                  ),
                                   filled: true,
                                   fillColor: Colors.grey[100],
                                   border: OutlineInputBorder(
@@ -107,7 +115,9 @@ class _LoginPageState extends State<LoginPage> {
                                 obscureText: _obscuredPassword,
                                 decoration: InputDecoration(
                                   hintText: "PASSWORD",
-                                  hintStyle: const TextStyle(color: Colors.grey),
+                                  hintStyle: const TextStyle(
+                                    color: Colors.grey,
+                                  ),
                                   filled: true,
                                   fillColor: Colors.grey[100],
                                   border: OutlineInputBorder(
@@ -131,7 +141,8 @@ class _LoginPageState extends State<LoginPage> {
                               const SizedBox(height: 20),
 
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     children: [
@@ -171,14 +182,18 @@ class _LoginPageState extends State<LoginPage> {
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.orange,
                                     padding: EdgeInsets.symmetric(
-                                        vertical: screenHeight * 0.02),
+                                      vertical: screenHeight * 0.02,
+                                    ),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(12),
                                     ),
                                   ),
                                   child: const Text(
                                     "LOG IN",
-                                    style: TextStyle(fontSize: 15, color: Colors.white),
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -209,7 +224,8 @@ class _LoginPageState extends State<LoginPage> {
                               const SizedBox(height: 20),
 
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Image.asset(
                                     "assets/images/social.png",

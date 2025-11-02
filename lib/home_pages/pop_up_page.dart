@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';
+import 'package:food_delivery/nav_bar/nav_bar_routes.dart';
 
 class PopUpPage extends StatelessWidget {
   const PopUpPage({super.key});
 
   void navigateToHome(BuildContext context) {
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => const HomePage()),
-    );
+    Navigator.of(
+      context,
+    ).pushReplacement(MaterialPageRoute(builder: (_) => NavBarRoutes()));
   }
 
   @override
@@ -63,16 +63,16 @@ class PopUpPage extends StatelessWidget {
                 const Text(
                   'Use the coupon get 25% discount',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white,
-                  ),
+                  style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
                 const SizedBox(height: 24),
                 OutlinedButton(
                   style: OutlinedButton.styleFrom(
                     side: const BorderSide(color: Colors.white),
-                    padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 32,
+                      vertical: 12,
+                    ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),

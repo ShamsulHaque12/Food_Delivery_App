@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 // Replace with your actual next screen
 class NextScreen extends StatelessWidget {
@@ -8,9 +7,7 @@ class NextScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text("Next screen")),
-    );
+    return Scaffold(body: Center(child: Text("Next screen")));
   }
 }
 
@@ -22,8 +19,10 @@ class VerificationCode extends StatefulWidget {
 }
 
 class _VerificationCodeState extends State<VerificationCode> {
-  final List<TextEditingController> _otpControllers =
-  List.generate(4, (_) => TextEditingController());
+  final List<TextEditingController> _otpControllers = List.generate(
+    4,
+    (_) => TextEditingController(),
+  );
   final List<FocusNode> _focusNodes = List.generate(4, (_) => FocusNode());
 
   Timer? _timer;
@@ -153,12 +152,21 @@ class _VerificationCodeState extends State<VerificationCode> {
                   color: Colors.white,
                   borderRadius: BorderRadius.vertical(top: Radius.circular(35)),
                 ),
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 30,
+                ),
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text("CODE", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                      const Text(
+                        "CODE",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                       const SizedBox(height: 8),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -166,24 +174,28 @@ class _VerificationCodeState extends State<VerificationCode> {
                       ),
                       const SizedBox(height: 20),
                       GestureDetector(
-                        onTap: _countdown == 0
-                            ? () {
-                          _startCountdown();
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text("OTP code resent."),
-                              duration: Duration(seconds: 2),
-                            ),
-                          );
-                        }
-                            : null,
+                        onTap:
+                            _countdown == 0
+                                ? () {
+                                  _startCountdown();
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text("OTP code resent."),
+                                      duration: Duration(seconds: 2),
+                                    ),
+                                  );
+                                }
+                                : null,
                         child: Center(
                           child: Text(
                             _countdown > 0
                                 ? "Resend in $_countdown sec"
                                 : "Didn't get the code? Resend",
                             style: TextStyle(
-                              color: _countdown == 0 ? Colors.orangeAccent : Colors.grey,
+                              color:
+                                  _countdown == 0
+                                      ? Colors.orangeAccent
+                                      : Colors.grey,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
@@ -205,10 +217,7 @@ class _VerificationCodeState extends State<VerificationCode> {
                           ),
                           child: const Text(
                             "VERIFY",
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.white,
-                            ),
+                            style: TextStyle(fontSize: 15, color: Colors.white),
                           ),
                         ),
                       ),

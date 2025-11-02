@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class RestrurentDetailPage extends StatefulWidget {
   final String name;
@@ -63,7 +61,10 @@ class _RestrurentDetailPageState extends State<RestrurentDetailPage> {
               const SizedBox(height: 20),
               Text(
                 widget.name,
-                style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const SizedBox(height: 10),
               Text(

@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/home_pages/shopping_bag/view/shopping_bag_screen.dart';
 import 'package:get/get.dart';
 
-import '../../food_details_page.dart';
 import '../controller/see_all_categories_controller.dart';
 
 class SeeAllCategories extends StatelessWidget {
@@ -73,7 +71,7 @@ class SeeAllCategories extends StatelessWidget {
                     ),
                     SizedBox(width: 10),
                     GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         ShoppingBagScreen(
                           name: category.name,
                           imagePath: category.imagePath,

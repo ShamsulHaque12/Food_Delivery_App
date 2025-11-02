@@ -3,9 +3,7 @@ import 'package:food_delivery/home_pages/restrurent_detail_page.dart';
 import 'package:food_delivery/home_pages/shopping_bag/view/shopping_bag_screen.dart';
 import 'package:food_delivery/model/food_categori.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
-import '../widgets/resturens.dart';
 import 'all_categories/view/see_all_categories.dart';
 import 'all_resturents.dart';
 import 'food_details_page.dart';
@@ -86,14 +84,16 @@ class _HomePageState extends State<HomePage> {
                     alignment: Alignment.topRight,
                     children: [
                       GestureDetector(
-                        onTap: (){
-                          Get.to(() => ShoppingBagScreen(
-                            name: '',
-                            imagePath: '',
-                            price: '',
-                            restaurant: '',
-                            icon: Icons.add,
-                          ));
+                        onTap: () {
+                          Get.to(
+                            () => ShoppingBagScreen(
+                              name: '',
+                              imagePath: '',
+                              price: '',
+                              restaurant: '',
+                              icon: Icons.add,
+                            ),
+                          );
                         },
                         child: Container(
                           height: 50,
@@ -218,31 +218,60 @@ class _HomePageState extends State<HomePage> {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
-                        boxShadow: [BoxShadow(color: Colors.grey.shade200, blurRadius: 5)],
+                        boxShadow: [
+                          BoxShadow(color: Colors.grey.shade200, blurRadius: 5),
+                        ],
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Image.asset(item['image'], height: 80, fit: BoxFit.cover),
+                          Image.asset(
+                            item['image'],
+                            height: 80,
+                            fit: BoxFit.cover,
+                          ),
                           SizedBox(height: 10),
-                          Text(item['name'], style:  TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-                          Text(item['restaurant'], style:  TextStyle(fontSize: 15, color: Colors.grey)),
+                          Text(
+                            item['name'],
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
+                          Text(
+                            item['restaurant'],
+                            style: TextStyle(fontSize: 15, color: Colors.grey),
+                          ),
                           SizedBox(height: 5),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("\$${item['price']}", style:  TextStyle(fontWeight: FontWeight.bold,fontSize: 15)),
+                              Text(
+                                "\$${item['price']}",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                ),
+                              ),
                               GestureDetector(
                                 onTap: () {
                                   // Add to cart logic
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(content: Text("${item['name']} added to cart")),
+                                    SnackBar(
+                                      content: Text(
+                                        "${item['name']} added to cart",
+                                      ),
+                                    ),
                                   );
                                 },
                                 child: const CircleAvatar(
                                   radius: 16,
                                   backgroundColor: Colors.grey,
-                                  child: Icon(Icons.add, size: 18, color: Colors.white),
+                                  child: Icon(
+                                    Icons.add,
+                                    size: 18,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
                             ],
@@ -336,13 +365,13 @@ class _HomePageState extends State<HomePage> {
           MaterialPageRoute(
             builder:
                 (_) => RestrurentDetailPage(
-              name: name,
-              imagePath: imagePath,
-              cuisine: cuisine,
-              rating: rating,
-              price: delivery,
-              time: time,
-            ),
+                  name: name,
+                  imagePath: imagePath,
+                  cuisine: cuisine,
+                  rating: rating,
+                  price: delivery,
+                  time: time,
+                ),
           ),
         );
       },

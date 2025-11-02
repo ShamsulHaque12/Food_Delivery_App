@@ -1,10 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/home_pages/pop_up_page.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-
-import 'home_page.dart';
 
 class LocetionScreen extends StatelessWidget {
   const LocetionScreen({super.key});
@@ -21,8 +17,8 @@ class LocetionScreen extends StatelessWidget {
           ),
           SizedBox(height: 30),
           InkWell(
-            onTap: (){
-              Get.to(()=>PopUpPage());
+            onTap: () {
+              Get.to(() => PopUpPage());
             },
             child: Container(
               height: 65,
@@ -51,7 +47,11 @@ class LocetionScreen extends StatelessWidget {
           SizedBox(height: 20),
           Text(
             "DFOOD WILL ACCESS YOUR LOCATION \nONLY WHILE USING THE APP",
-            style: TextStyle(fontSize: 20,color: Colors.grey,fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.grey,
+              fontWeight: FontWeight.bold,
+            ),
             textAlign: TextAlign.center,
           ),
         ],
